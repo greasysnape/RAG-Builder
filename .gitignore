@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+*.local
+.vscode/
+.claude/
+downloads/
+vector_db/
+.rag_builder_preferences.json
+rag_builder_preferences.json
+setup_scripts/
