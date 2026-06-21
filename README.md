@@ -1,15 +1,15 @@
 # RAG Builder
 
-자연어 쿼리로 관련 웹 문서를 자동 수집하고 RAG 벡터 데이터베이스를 구축하는 도구.
-Streamlit 웹 UI로 동작.
+자연어 쿼리로 관련 웹 문서를 자동 수집하고 RAG 벡터 데이터베이스를 구축하는 도구
+Streamlit 웹 UI로 동작
 
 ## 동작 방식
 
-1. **URL 검색** — 자연어 쿼리를 Perplexity 또는 Firecrawl Search API로 분석해 관련 URL 수집 (쿼리당 최대 30개).
-2. **문서 다운로드** — Firecrawl Scrape로 각 URL을 마크다운으로 변환해 `downloads/`에 저장. PDF는 Dolphin으로 변환(설치 시).
-3. **RAG 구축** — 문서를 청크로 나눠 임베딩한 뒤 벡터 DB에 저장.
+1. **URL 검색** — 자연어 쿼리를 Perplexity 또는 Firecrawl Search API로 분석해 관련 URL 수집 (쿼리당 최대 30개)
+2. **문서 다운로드** — Firecrawl Scrape로 각 URL을 마크다운으로 변환해 `downloads/`에 저장. PDF는 Dolphin으로 변환(설치 시)
+3. **RAG 구축** — 문서를 청크로 나눠 임베딩한 뒤 벡터 DB에 저장
 
-로컬 문서 파일 업로드, 컬렉션 관리(생성·삭제·통계), 의미 기반 검색도 지원.
+로컬 문서 파일 업로드, 컬렉션 관리(생성·삭제·통계), 의미 기반 검색도 지원
 
 ## 구성
 
@@ -40,7 +40,7 @@ pip install -r requirements.txt
 
 ## 환경 변수 설정
 
-프로젝트 루트에 `.env` 파일을 만들고 API 키 입력. 파일 이름은 반드시 `.env`여야 함(`load_dotenv()`가 이 이름을 찾음).
+프로젝트 루트에 `.env` 파일을 만들고 API 키 입력 
 
 ```env
 # API 키
@@ -69,7 +69,7 @@ REQUEST_TIMEOUT=30
 LOG_LEVEL=INFO
 ```
 
-`FIRECRAWL_API_KEY`는 문서 다운로드에, `PERPLEXITY_API_KEY`는 URL 검색에 사용.
+`FIRECRAWL_API_KEY`는 문서 다운로드에, `PERPLEXITY_API_KEY`는 URL 검색에 사용
 
 ## 실행
 
@@ -77,7 +77,7 @@ LOG_LEVEL=INFO
 streamlit run streamlit_app.py
 ```
 
-브라우저에서 `http://localhost:8501`로 접속.
+브라우저에서 `http://localhost:8501`로 접속
 
 ### 탭 구성
 - **전체 워크플로우** — 검색부터 RAG 구축까지 한 번에 실행
